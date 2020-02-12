@@ -1,38 +1,127 @@
-.App {
-  text-align: center;
+/* Common rules */
+body {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.orange-bar {
+  background-color: #f56c2a;
+  height: 74px;
+  border-radius: 0 0 30% 30%;
+  position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header {
+  width: 1200px;
+  margin: 10px auto 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.general {
+  width: 1200px;
+  margin: 150px auto 0 auto;
+  background-color: #fafafa;
+}
+
+/* OneOffer */
+
+.bg-img {
+  background-color: #cad2d9;
+  height: 180px;
+  width: 240px;
+}
+
+.bg-img > img {
+  height: 180px;
+  width: 240px;
+  object-fit: contain;
+  border-radius: 3px;
+}
+
+.item {
+  box-shadow: 2px 2px 2px rgba(1, 1, 1, 0.3);
+  margin-bottom: 20px;
+  display: flex;
+  border-radius: 3px;
+}
+.price {
+  color: #f56c2a;
+}
+.description {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 20px;
+}
+
+.title {
+  font-size: 20px;
+}
+.price {
+  font-size: 18px;
+  padding-top: 15px;
+}
+/* Header */
+.logo {
+  width: 167.26px;
+}
+.plus-bar {
+  background-color: #f56c2a;
+  color: white;
+  border-radius: 3px;
+  width: 204px;
+  height: 40px;
+  font-size: 16px;
+}
+
+.search-bar {
+  border: none;
+  border-bottom: 3px solid #f56c2a;
+  border-radius: 3px;
+  height: 44px;
+  font-size: 16px;
+}
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  font-size: 16px;
+  size: 16px;
+}
+
+.first-header {
+  width: 620px;
+  display: flex;
+  justify-content: space-around;
+}
+/* Search bar */
+
+form {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 810px;
+  height: 130px;
+  background-color: #fff;
+  position: absolute;
+  top: 35px;
+  left: 25%;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px rgba(1, 1, 1, 0.2);
+}
+
+.input {
+  width: 320px;
+}
+.put-search {
+  background-color: #4284d7;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  border-radius: 3px;
+  width: 220px;
+  height: 44px;
+  font-size: 16px;
 }
