@@ -1,0 +1,12 @@
+.footer {
+  text-align: center;
+  height: 50px;
+  background-color: #474747;
+  color: white;
+  padding-top: 35px;
+}
+
+.footer > a {
+  color: white;
+  text-decoration: underline;
+}

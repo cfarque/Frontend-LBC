@@ -1,0 +1,41 @@
+.why-create > h3 {
+  border: none;
+}
+
+.why-create {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.why-create > div {
+  display: flex;
+  align-items: flex-end;
+}
+
+.why-create-one {
+  display: flex;
+  width: 500px;
+  height: 100%;
+  align-items: space-around;
+  margin-top: 6px;
+}
+
+.why-create-one > i {
+  color: #4183d7;
+  font-size: 40px;
+  padding-bottom: 30px;
+}
+
+.why-create-one-description {
+  padding-left: 29px;
+}
+
+h4 {
+  padding-bottom: 20px;
+  font-weight: bold;
+}
+
+.why-create-one-description > p {
+  line-height: 20px;
+}

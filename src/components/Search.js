@@ -1,8 +1,9 @@
 import React from "react";
+import "./Search.css";
 
 function Search() {
   return (
-    <form onSubmit={() => {}}>
+    <form className="searched-bar" onSubmit={() => {}}>
       <input
         className="input"
         type="search"

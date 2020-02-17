@@ -1,0 +1,84 @@
+/* LogIn */
+.all-login {
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fafafa;
+  height: 100vh;
+}
+h3 {
+  border-bottom: 3px solid #f56b2a;
+  width: 456px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 22px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+}
+
+.bg-white {
+  background-color: white;
+  margin-top: 30px;
+  display: flex;
+}
+
+.loginpage {
+  margin-top: 40px;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loginpage > p {
+  margin-left: -370px;
+  font-size: 14px;
+}
+
+.connect-button {
+  width: 456px;
+  border-radius: 3px;
+  background-color: #4183d7;
+  color: white;
+  height: 38px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.account-input {
+  border-radius: 3px;
+  border: 1px solid lightgrey;
+  height: 34px;
+  width: 452px;
+  margin: 20px 0;
+}
+
+.no-account {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 452px;
+  border-top: 1px solid lightgrey;
+  width: 700px;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+}
+
+.btn-crea {
+  width: 452px;
+  height: 38px;
+  background-color: white;
+  border: 1px #70a2e1 solid;
+  border-radius: 3px;
+  color: #70a2e1;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.no-account > div {
+  padding: 20px 0;
+  font-size: 14px;
+}

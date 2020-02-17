@@ -1,0 +1,72 @@
+/* SignUp */
+
+.signin-all {
+  display: flex;
+  margin: 20px 20px 100px 20px;
+}
+
+.create-account {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.signin-page {
+  padding-left: 3px;
+  display: flex;
+  flex-direction: column;
+  width: 460px;
+}
+
+.signin-page > input {
+  width: 100%;
+  border-radius: 3px;
+  border: 1px solid lightgrey;
+  height: 45px;
+}
+
+.signin-page > div {
+  padding: 20px 0;
+}
+
+.signin-password > div {
+  width: 49%;
+}
+
+.signin-password {
+  display: flex;
+  justify-content: space-around;
+}
+
+.signin-password-first {
+  padding-bottom: 10px;
+}
+
+.signin-password-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.signin-password-input > input {
+  height: 45px;
+  border-radius: 3px;
+  border: 1px solid lightgrey;
+}
+
+.signin-checkbox {
+  font-size: 15px;
+  line-height: 30px;
+}
+.signin-checkbox > input {
+  border: #f56b2a 1px solid;
+}
+
+.signin-page > button {
+  background-color: #4183d7;
+  color: white;
+  flex: 1;
+  border-radius: 3px;
+  line-height: 45px;
+  font-size: 16px;
+}

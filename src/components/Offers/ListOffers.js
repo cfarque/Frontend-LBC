@@ -4,13 +4,15 @@ import axios from "axios";
 import OneOffer from "./OneOffer";
 
 function ListOffers({ offers, setOffers, step, setStep }) {
+  // je créé une fonction qui va faire une requête au serveur pour récupérer les annonces
   const fetchData = async () => {
     const response = await axios.get(
-      "https://leboncoin-api.herokuapp.com/api/offer/with-count"
+      "https://leboncoin-2003-claire.herokuapp.com/api/offer/with-count"
     );
+    // je mets à jour le state de offers
     setOffers(response.data.offers);
   };
-
+  // j'appelle ma fonction fetchData une seule fois au chargement de ma page
   useEffect(() => {
     fetchData();
   });
@@ -18,7 +20,8 @@ function ListOffers({ offers, setOffers, step, setStep }) {
   return (
     <div>
       {offers.map((offer, index) => {
-        return <OneOffer offer={offer} step={step} setStep={setStep} />;
+        // je parcours mon tableau offers et j'envoie des données à mon component
+        return <OneOffer key={offer._id} offer={offer} />;
       })}
     </div>
   );
