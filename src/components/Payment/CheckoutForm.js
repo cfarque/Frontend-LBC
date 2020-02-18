@@ -21,13 +21,13 @@ function CheckoutForm({ stripe, title, picture, price, username }) {
             if (stripeResponse.error) {
               alert(stripeResponse.error.message);
             } else {
-              console.log("stripeResponse.token", stripeResponse.token);
+              // console.log("stripeResponse.token", stripeResponse.token);
             }
             const paymentResponse = await axios.post(
-              "http://localhost:3000/payment",
+              "http://leboncoin-2003-claire.herokuapp.com/payment",
               { token: stripeResponse.token.id, amount: price, title: title }
             );
-            console.log("paymentResponse", paymentResponse);
+            // console.log("paymentResponse", paymentResponse);
           }}
         >
           Valider le paiement
