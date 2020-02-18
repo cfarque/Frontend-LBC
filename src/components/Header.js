@@ -1,6 +1,6 @@
 import React from "react";
 import "./Header.css";
-import Logo from "/Users/Claire/LeReacteur/React/lbc/leboncoin-front/src/Leboncoin.fr_Logo_2016.svg";
+import Logo from "../assets/Leboncoin.fr_Logo_2016.svg";
 import { useHistory } from "react-router-dom";
 import Cookies from "js-cookie";
 function Header({ user, setUser }) {
