@@ -8,7 +8,7 @@ function Publish({ user }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState(0);
-  const [file, setFile] = useState("");
+  const [file, setFile] = useState();
 
   return (
     <div className="background-beige">
@@ -23,9 +23,10 @@ function Publish({ user }) {
               formData.append("title", title);
               formData.append("description", description);
               formData.append("price", price);
-              formData.append("picture", file);
-
+              formData.append("pictures", file);
+              console.log("1");
               try {
+                console.log("2");
                 const response = await axios.post(
                   "https://leboncoin-2003-claire.herokuapp.com/offer/publish",
                   formData,
@@ -36,6 +37,7 @@ function Publish({ user }) {
                     }
                   }
                 );
+                console.log("3");
                 setTitle("");
                 setDescription("");
                 setPrice("");
@@ -84,11 +86,11 @@ function Publish({ user }) {
           </span>
           <label className="publish-label">Photo</label>
           <input
-            multiple
+            multiple="multiple"
             className="publish-select-file"
             type="file"
             onChange={event => {
-              setFile(event.target.files);
+              setFile(event.target.files[0]);
             }}
           />
           <button type="submit">Valider</button>
