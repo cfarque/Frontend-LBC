@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
+import { Elements, StripeProvider } from "react-strpe-elements";
 import Offers from "./containers/Offers";
 import Offer from "./containers/Offer";
 import Header from "./components/Header";
@@ -9,6 +10,7 @@ import SignUp from "./containers/SignUp";
 import Publish from "./containers/Publish";
 import Cookies from "js-cookie";
 import Footer from "./components/Footer";
+import CheckoutForm from "./components/Payment/CheckoutForm";
 
 function App() {
   //Je stocke le token dans un cookie
@@ -29,6 +31,16 @@ function App() {
       <Switch>
         <Route path="/user/sign_up">
           <SignUp />
+        </Route>
+        <Route path="/payment">
+          <StripeProvider
+            apiKey="	
+pk_test_MPC5U4TIGO38zJvaz5r5a1Mz00NF4khP0c"
+          >
+            <Elements>
+              <CheckoutForm />
+            </Elements>
+          </StripeProvider>
         </Route>
         <Route path="/user/log_in">
           <LogIn user={user} setUser={setUser} />

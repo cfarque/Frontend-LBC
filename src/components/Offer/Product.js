@@ -2,9 +2,13 @@ import React from "react";
 import "./Product.css";
 import moment from "moment";
 import "moment/locale/fr";
+import { useHistory } from "react-router-dom";
+import cookie from "js-cookie";
+
 // je récupère l'objet offer
 function Product({ offer }) {
-  console.log(offer);
+  const token = cookie.get("token") || null;
+  const history = useHistory();
   moment.locale("fr");
   return (
     <div className="global-div">
@@ -45,7 +49,18 @@ function Product({ offer }) {
       </div>
       <div className="aside">
         <div className="offer-user">{offer.creator.account.username}</div>
-        <button className="paid">Acheter</button>
+        <button
+          className="paid"
+          onClick={() => {
+            if (token) {
+              history.push("/payment", { title: offer.title });
+            } else {
+              history.push("/log_in", { title: offer.title });
+            }
+          }}
+        >
+          Acheter
+        </button>
       </div>
     </div>
   );
