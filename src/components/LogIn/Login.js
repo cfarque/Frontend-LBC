@@ -13,20 +13,17 @@ function Login({ setPassword, password, setEmail, email, setUser }) {
           className="loginpage"
           onSubmit={async event => {
             event.preventDefault();
-            console.log("submit ok");
             try {
               const response = await axios.post(
                 "https://leboncoin-2003-claire.herokuapp.com/user/log_in",
                 { email, password }
               );
-              console.log("axios ok");
               if (response.data.token) {
                 // Connexion réussie
                 const token = response.data.token;
                 Cookies.set("token", token, { expires: 7 });
                 history.push("/");
                 setUser({ token });
-                console.log("token ok");
               } else {
                 // Connexion échouée
                 alert("le mot de passe et/ou l'identifiant est incorrect");
