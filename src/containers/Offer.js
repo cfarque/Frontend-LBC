@@ -13,7 +13,6 @@ function Offer() {
       "https://leboncoin-2003-claire.herokuapp.com/offer/" + params.id
     );
     // je mets à jour mon objet offer
-    console.log(response.data);
     setOffer(response.data);
     // je change l'état de isLoading
     setIsLoading(false);

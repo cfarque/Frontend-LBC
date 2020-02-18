@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { CardElement, injectStripe } from "react-stripe-elements";
 import axios from "axios";
+import "./CheckoutForm.css";
 
 function CheckoutForm({ stripe, title, picture, price, username }) {
   return (
@@ -8,10 +9,10 @@ function CheckoutForm({ stripe, title, picture, price, username }) {
       <div className="checkForm-offer">
         <h4>Acheter en ligne</h4>
         <img src={picture} alt={title} />
-        <div>{title}</div>
-        <div>{price}</div>
-        <div>Vos Coordonnées bancaires</div>
-        <CardElement />
+        <div className="checkForm-title">{title}</div>
+        <div className="checkForm-price">{price} €</div>
+        <div className="checkForm-number">Vos coordonnées bancaires</div>
+        <CardElement className="card-element" />
         <button
           onClick={async event => {
             const stripeResponse = await stripe.createToken({
@@ -23,7 +24,7 @@ function CheckoutForm({ stripe, title, picture, price, username }) {
               console.log("stripeResponse.token", stripeResponse.token);
             }
             const paymentResponse = await axios.post(
-              "https://leboncoin-2003-claire.herokuapp.com/payment",
+              "http://localhost:3000/payment",
               { token: stripeResponse.token.id, amount: price, title: title }
             );
             console.log("paymentResponse", paymentResponse);

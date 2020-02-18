@@ -32,6 +32,7 @@ function Publish({ user }) {
                 console.log("2");
                 const response = await axios.post(
                   "https://leboncoin-2003-claire.herokuapp.com/offer/publish",
+
                   formData,
                   {
                     headers: {

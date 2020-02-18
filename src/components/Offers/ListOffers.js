@@ -10,6 +10,7 @@ function ListOffers({ offers, setOffers, step, setStep }) {
       "https://leboncoin-2003-claire.herokuapp.com/offer/with-count"
     );
     // je mets à jour le state de offers
+    console.log(response.data.offers);
     setOffers(response.data.offers);
   };
   // j'appelle ma fonction fetchData une seule fois au chargement de ma page
