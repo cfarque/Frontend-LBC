@@ -84,10 +84,11 @@ function Publish({ user }) {
           </span>
           <label className="publish-label">Photo</label>
           <input
+            multiple
             className="publish-select-file"
             type="file"
             onChange={event => {
-              setFile(event.target.files[0]);
+              setFile(event.target.files);
             }}
           />
           <button type="submit">Valider</button>
