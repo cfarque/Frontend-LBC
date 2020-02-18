@@ -22,43 +22,47 @@ function SignUp() {
           // lors de la validation de la page
           onSubmit={async event => {
             event.preventDefault();
-            // si la checkbox est cochée
-            if (checkBox === true) {
-              // on vérifie que les deux mots de passe sont identiques
-              if (password === secondPassword) {
-                // on met un try/catch pour gérer les cas où l'utilisateur n'est pas connu
-                try {
-                  // j'envoie au serveur les informations d'inscription'
-                  const response = await axios.post(
-                    "https://leboncoin-2003-claire.herokuapp.com/api/user/sign_up",
-                    {
-                      username,
-                      email,
-                      password
-                    }
-                  );
-                  // si l'inscription est réussie :
-                  // je sauvegarde le token
-                  Cookies.set("token", response.data.token, { expires: 7 });
-                  // je remets les states des inputs à 0
-                  setEmail("");
-                  setPassword("");
-                  setUsername("");
-                  setSecondPassword("");
-                  setCheckBox(false);
-                  // je redirige sur la page d'accueil
-                  history.push("/");
-                } catch (error) {
-                  // si l'inscription a échoué car les identifiants existent déjà
-                  alert("les identifiants existent déjà ");
+            if (username && email && password && secondPassword) {
+              // si la checkbox est cochée
+              if (checkBox === true) {
+                // on vérifie que les deux mots de passe sont identiques
+                if (password === secondPassword) {
+                  // on met un try/catch pour gérer les cas où l'utilisateur n'est pas connu
+                  try {
+                    // j'envoie au serveur les informations d'inscription'
+                    const response = await axios.post(
+                      "https://leboncoin-2003-claire.herokuapp.com/user/sign_up",
+                      {
+                        username,
+                        email,
+                        password
+                      }
+                    );
+                    // si l'inscription est réussie :
+                    // je sauvegarde le token
+                    Cookies.set("token", response.data.token, { expires: 7 });
+                    // je remets les states des inputs à 0
+                    setEmail("");
+                    setPassword("");
+                    setUsername("");
+                    setSecondPassword("");
+                    setCheckBox(false);
+                    // je redirige sur la page d'accueil
+                    history.push("/");
+                  } catch (error) {
+                    // si l'inscription a échoué car les identifiants existent déjà
+                    alert("les identifiants existent déjà ");
+                  }
+                } else {
+                  // si l'inscription a échoué car les mots de passe sont différents
+                  alert("Les deux mots de passe ne sont pas identiques");
                 }
               } else {
-                // si l'inscription a échoué car les mots de passe sont différents
-                alert("Les deux mots de passe ne sont pas identiques");
+                // si la checkbox n'est pas cochée
+                alert("Veuillez accepter les conditions générales");
               }
             } else {
-              // si la checkbox n'est pas cochée
-              alert("Veuillez accepter les conditions générales");
+              alert("un des champs est vide");
             }
           }}
         >

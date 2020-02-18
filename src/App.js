@@ -14,7 +14,7 @@ function App() {
   //Je stocke le token dans un cookie
   const tokenFromCookie = Cookies.get("token");
   let newState;
-  const [user, setUser] = useState(newState);
+
   // Si le token existe je change l'état de user en lui donnant le token
   if (tokenFromCookie) {
     newState = { token: tokenFromCookie };
@@ -22,6 +22,7 @@ function App() {
     //sinon je lui attributs la valeur null
     newState = null;
   }
+  const [user, setUser] = useState(newState);
   return (
     <Router>
       <Header user={user} setUser={setUser} />
@@ -33,7 +34,7 @@ function App() {
           <LogIn user={user} setUser={setUser} />
         </Route>
         <Route path="/offer/publish">
-          <Publish />
+          <Publish user={user} />
         </Route>
         <Route path="/offer/:id">
           <Offer />

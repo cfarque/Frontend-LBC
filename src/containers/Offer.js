@@ -10,9 +10,10 @@ function Offer() {
   const fetchData = async () => {
     // je fais une requête au serveur avec l'id, pour récupérer et afficher les informations d'une annonce en particulier
     const response = await axios.get(
-      "https://leboncoin-api.herokuapp.com/api/offer/" + params.id
+      "https://leboncoin-2003-claire.herokuapp.com/offer/" + params.id
     );
     // je mets à jour mon objet offer
+    console.log(response.data);
     setOffer(response.data);
     // je change l'état de isLoading
     setIsLoading(false);
@@ -20,7 +21,7 @@ function Offer() {
   // j'appelle ma fonction fetchData qu'une seule fois au chargement de ma page
   useEffect(() => {
     fetchData();
-  });
+  }, [params.id]);
   return (
     <div className="product-page">
       {isLoading ? (

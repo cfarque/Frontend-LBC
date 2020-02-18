@@ -6,7 +6,7 @@ function WhyCreate() {
     <div className="why-create">
       <h3>Pourquoi créer un compte ?</h3>
       <div className="why-create-one">
-        <i class="far fa-clock"></i>
+        <i className="far fa-clock"></i>
         <div className="why-create-one-description">
           <h4>Gagnez du temps</h4>
           <p>
@@ -16,7 +16,7 @@ function WhyCreate() {
         </div>
       </div>
       <div className="why-create-one">
-        <i class="far fa-bell"></i>
+        <i classNames="far fa-bell"></i>
         <div className="why-create-one-description">
           <h4>Soyez les premiers informés</h4>
           <p>
@@ -27,7 +27,7 @@ function WhyCreate() {
       </div>
       <div className="why-create-one">
         {" "}
-        <i class="fas fa-eye"></i>
+        <i className="fas fa-eye"></i>
         <div className="why-create-one-description">
           <h4>Visibilité</h4>
           <p>

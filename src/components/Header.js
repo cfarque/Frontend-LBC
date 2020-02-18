@@ -9,7 +9,14 @@ function Header({ user, setUser }) {
     <div className="all-header">
       <div className="header">
         <div className="first-header">
-          <img className="logo" src={Logo} alt="Leboncoin" />
+          <img
+            className="logo"
+            src={Logo}
+            alt="Leboncoin"
+            onClick={() => {
+              history.push("/");
+            }}
+          />
           <button
             className="plus-bar"
             onClick={() => {

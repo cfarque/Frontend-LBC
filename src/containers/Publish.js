@@ -1,16 +1,14 @@
 import React, { useState } from "react";
 import "../components/Publish/Publish.css";
-import cookies from "js-cookie";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 
-function Publish() {
+function Publish({ user }) {
   const history = useHistory();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState(0);
   const [file, setFile] = useState("");
-  const userToken = cookies.get("token");
 
   return (
     <div className="background-beige">
@@ -20,19 +18,20 @@ function Publish() {
           className="publish-offer"
           onSubmit={async event => {
             event.preventDefault();
-            if (userToken) {
+            if (user) {
               const formData = new FormData();
               formData.append("title", title);
               formData.append("description", description);
               formData.append("price", price);
               formData.append("picture", file);
+
               try {
                 const response = await axios.post(
-                  "https://leboncoin-2003-claire.herokuapp.com/api/offer/publish",
+                  "https://leboncoin-2003-claire.herokuapp.com/offer/publish",
                   formData,
                   {
                     headers: {
-                      Authorization: "Bearer " + userToken,
+                      Authorization: "Bearer " + user.token,
                       "Content-Type": "multipart/form-data"
                     }
                   }
@@ -41,6 +40,7 @@ function Publish() {
                 setDescription("");
                 setPrice("");
                 setFile("");
+                history.push("/");
               } catch (error) {
                 console.log(error);
               }
