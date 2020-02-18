@@ -23,8 +23,8 @@ function CheckoutForm({ stripe, title, picture, price, username }) {
               console.log("stripeResponse.token", stripeResponse.token);
             }
             const paymentResponse = await axios.post(
-              "https://leboncoin-2003-claire.herokuapp.com/user/log_in",
-              { token: stripeResponse.token.id }
+              "https://leboncoin-2003-claire.herokuapp.com/payment",
+              { token: stripeResponse.token.id, amount: price, title: title }
             );
             console.log("paymentResponse", paymentResponse);
           }}

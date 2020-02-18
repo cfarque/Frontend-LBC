@@ -8,7 +8,7 @@ function Publish({ user }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState(0);
-  const [file, setFile] = useState();
+  const [files, setFiles] = useState();
 
   return (
     <div className="background-beige">
@@ -23,7 +23,10 @@ function Publish({ user }) {
               formData.append("title", title);
               formData.append("description", description);
               formData.append("price", price);
-              formData.append("pictures", file);
+              const keys = Object.keys(files);
+              for (let key in keys) {
+                formData.append("pictures", files[key]);
+              }
               console.log("1");
               try {
                 console.log("2");
@@ -41,7 +44,7 @@ function Publish({ user }) {
                 setTitle("");
                 setDescription("");
                 setPrice("");
-                setFile("");
+                setFiles("");
                 history.push("/");
               } catch (error) {
                 console.log(error);
@@ -90,7 +93,7 @@ function Publish({ user }) {
             className="publish-select-file"
             type="file"
             onChange={event => {
-              setFile(event.target.files[0]);
+              setFiles(event.target.files);
             }}
           />
           <button type="submit">Valider</button>
