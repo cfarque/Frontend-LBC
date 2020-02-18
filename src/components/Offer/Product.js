@@ -53,9 +53,14 @@ function Product({ offer }) {
           className="paid"
           onClick={() => {
             if (token) {
-              history.push("/payment", { title: offer.title });
+              history.push("/payment", {
+                title: offer.title,
+                price: offer.price,
+                picture: offer.picture,
+                username: offer.creator.account.username
+              });
             } else {
-              history.push("/log_in", { title: offer.title });
+              history.push("/log_in");
             }
           }}
         >
