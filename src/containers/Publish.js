@@ -23,13 +23,12 @@ function Publish({ user }) {
               formData.append("title", title);
               formData.append("description", description);
               formData.append("price", price);
-              const keys = Object.keys(files);
-              for (let key in keys) {
-                formData.append("pictures", files[key]);
+              formData.append("picture", files)
+              // const keys = Object.keys(files);
+              // for (let key in keys) {
+              //   formData.append("pictures", files[key]);
               }
-              console.log("1");
               try {
-                console.log("2");
                 const response = await axios.post(
                   "https://leboncoin-2003-claire.herokuapp.com/offer/publish",
 
@@ -94,7 +93,7 @@ function Publish({ user }) {
             className="publish-select-file"
             type="file"
             onChange={event => {
-              setFiles(event.target.files);
+              setFiles(event.target.files[0]);
             }}
           />
           <button type="submit">Valider</button>
