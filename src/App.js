@@ -26,35 +26,35 @@ function App() {
   }
   const [user, setUser] = useState(newState);
   return (
-    <Router>
-      <Header user={user} setUser={setUser} />
-      <Switch>
-        <Route path="/user/sign_up">
-          <SignUp />
-        </Route>
-        <Route path="/payment">
-          <StripeProvider
-            apiKey="	
+    <StripeProvider
+      apiKey="	
 pk_test_MPC5U4TIGO38zJvaz5r5a1Mz00NF4khP0c"
-          >
+    >
+      <Router>
+        <Header user={user} setUser={setUser} />
+        <Switch>
+          <Route path="/user/sign_up">
+            <SignUp />
+          </Route>
+          <Route path="/payment">
             <Payment />
-          </StripeProvider>
-        </Route>
-        <Route path="/user/log_in">
-          <LogIn user={user} setUser={setUser} />
-        </Route>
-        <Route path="/offer/publish">
-          <Publish user={user} />
-        </Route>
-        <Route path="/offer/:id">
-          <Offer />
-        </Route>
-        <Route path="/">
-          <Offers />
-        </Route>
-      </Switch>
-      <Footer />
-    </Router>
+          </Route>
+          <Route path="/user/log_in">
+            <LogIn user={user} setUser={setUser} />
+          </Route>
+          <Route path="/offer/publish">
+            <Publish user={user} />
+          </Route>
+          <Route path="/offer/:id">
+            <Offer />
+          </Route>
+          <Route path="/">
+            <Offers />
+          </Route>
+        </Switch>
+        <Footer />
+      </Router>
+    </StripeProvider>
   );
 }
 

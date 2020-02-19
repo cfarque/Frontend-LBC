@@ -23,11 +23,10 @@ function Publish({ user }) {
               formData.append("title", title);
               formData.append("description", description);
               formData.append("price", price);
-              formData.append("picture", files)
+              formData.append("picture", files);
               // const keys = Object.keys(files);
               // for (let key in keys) {
               //   formData.append("pictures", files[key]);
-              }
               try {
                 const response = await axios.post(
                   "https://leboncoin-2003-claire.herokuapp.com/offer/publish",
@@ -40,7 +39,6 @@ function Publish({ user }) {
                     }
                   }
                 );
-                console.log("3");
                 setTitle("");
                 setDescription("");
                 setPrice("");

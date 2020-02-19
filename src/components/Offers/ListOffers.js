@@ -6,7 +6,9 @@ import OneOffer from "./OneOffer";
 function ListOffers({ offers, setOffers, step, setStep }) {
   // je créé une fonction qui va faire une requête au serveur pour récupérer les annonces
   const fetchData = async () => {
-    const response = await axios.get("http://localhost:3000/offer/with-count");
+    const response = await axios.get(
+      "http://leboncoin-2003-claire.herokuapp.com/offer/with-count"
+    );
     // je mets à jour le state de offers
     console.log(response.data);
     setOffers(response.data.offers);
