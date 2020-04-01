@@ -1,7 +1,7 @@
 import React from "react";
 import { Elements } from "react-stripe-elements";
 import { useLocation } from "react-router-dom";
-import CheckoutForm from "../components/Payment/CheckoutForm";
+import CheckoutForm from "../components/CheckoutForm";
 import cookie from "js-cookie";
 
 function Payment() {

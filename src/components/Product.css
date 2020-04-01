@@ -2,7 +2,6 @@
 .product-page {
   background-color: #fafafa;
   margin-top: 3px;
-  height: 100vh;
 }
 
 .global-div {
@@ -11,16 +10,17 @@
 }
 
 .offer-picture > img {
-  width: 430px;
   object-fit: contain;
+  object-position: center;
+  width: 100%;
 }
 
 .offer-picture {
   width: 607px;
   background-color: darkgray;
+  height: 400px;
   display: flex;
-  justify-content: center;
-  min-height: 400px;
+  overflow-x: scroll;
 }
 
 .offer-description {
@@ -34,6 +34,7 @@
 
 .offer-infos {
   padding: 20px;
+  margin-bottom: 100px;
 }
 
 .offer-title {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import Product from "../components/Offer/Product";
+import Product from "../components/Product";
 
 function Offer() {
   const [offer, setOffer] = useState({});

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../components/Publish/Publish.css";
+import "../components/Publish.css";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 
@@ -23,11 +23,12 @@ function Publish({ user }) {
               formData.append("title", title);
               formData.append("description", description);
               formData.append("price", price);
-              formData.append("picture", files);
-              // const keys = Object.keys(files);
-              // for (let key in keys) {
-              //   formData.append("pictures", files[key]);
+              const keys = Object.keys(files);
+              for (let key in keys) {
+                formData.append("files", files[key]);
+              }
               try {
+                console.log("submit");
                 const response = await axios.post(
                   "https://leboncoin-2003-claire.herokuapp.com/offer/publish",
 
@@ -39,6 +40,7 @@ function Publish({ user }) {
                     }
                   }
                 );
+                console.log(response);
                 setTitle("");
                 setDescription("");
                 setPrice("");
@@ -91,7 +93,7 @@ function Publish({ user }) {
             className="publish-select-file"
             type="file"
             onChange={event => {
-              setFiles(event.target.files[0]);
+              setFiles(Array.from(event.target.files));
             }}
           />
           <button type="submit">Valider</button>

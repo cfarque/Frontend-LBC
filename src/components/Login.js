@@ -20,7 +20,6 @@ function Login({ setPassword, password, setEmail, email, setUser }) {
               );
               if (response.data.token) {
                 // Connexion réussie
-                console.log(response.data);
                 const token = response.data.token;
                 const username = response.data.account.username;
                 Cookies.set("token", token, { expires: 7 });

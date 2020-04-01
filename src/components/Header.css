@@ -1,5 +1,6 @@
 /* Header */
 .all-header {
+  height: 75px;
   display: flex;
   justify-content: center;
   box-shadow: 2px 2px 2px rgba(1, 1, 1, 0.4);
@@ -22,6 +23,9 @@
   width: 204px;
   height: 40px;
   font-size: 16px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .search-bar {
@@ -29,6 +33,10 @@
   border-radius: 3px;
   height: 44px;
   font-size: 16px;
+  width: 110px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .search-bar:hover {
@@ -42,10 +50,11 @@
   border: none;
   font-size: 16px;
   size: 16px;
+  width: 150px;
 }
 
 .first-header {
-  width: 620px;
+  width: 700px;
   display: flex;
   justify-content: space-around;
 }

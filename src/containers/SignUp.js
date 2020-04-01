@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import WhyCreate from "../components/SignUp/WhyCreate";
+import WhyCreate from "../components/WhyCreate";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import Cookies from "js-cookie";
-import "../components/SignUp/SignUp.css";
+import "../components/SignUp.css";
 
 function SignUp() {
   const history = useHistory();

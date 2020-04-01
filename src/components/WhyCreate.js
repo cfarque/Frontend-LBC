@@ -16,7 +16,7 @@ function WhyCreate() {
         </div>
       </div>
       <div className="why-create-one">
-        <i classNames="far fa-bell"></i>
+        <i className="far fa-bell"></i>
         <div className="why-create-one-description">
           <h4>Soyez les premiers informés</h4>
           <p>

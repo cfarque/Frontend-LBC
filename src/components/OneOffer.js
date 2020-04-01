@@ -9,13 +9,14 @@ function OneOffer({ offer }) {
   // je récupère chaque offre
   // je créé une constante pour afficher une url
   const page = `/offer/${offer._id}`;
+
   return (
     <Link to={page}>
       <div className="item">
-        {offer.picture ? (
+        {offer.pictures ? (
           // si mon tableau d'images n'est pas vide j'affiche la première image du tableau
           <div className="bg-img">
-            <img src={offer.picture} alt="annonce" />
+            <img src={offer.pictures[0]} alt="annonce" />
           </div>
         ) : (
           //sinon j'affiche un logo vide

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { CardElement, injectStripe } from "react-stripe-elements";
 import axios from "axios";
 import "./CheckoutForm.css";
@@ -23,8 +23,8 @@ function CheckoutForm({ stripe, title, picture, price, username }) {
             } else {
               // console.log("stripeResponse.token", stripeResponse.token);
             }
-            const paymentResponse = await axios.post(
-              "http://leboncoin-2003-claire.herokuapp.com/payment",
+            await axios.post(
+              "https://leboncoin-2003-claire.herokuapp.com/payment",
               { token: stripeResponse.token.id, amount: price, title: title }
             );
             // console.log("paymentResponse", paymentResponse);
