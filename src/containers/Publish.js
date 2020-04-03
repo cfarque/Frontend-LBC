@@ -20,13 +20,15 @@ function Publish({ user }) {
             event.preventDefault();
             if (user) {
               const formData = new FormData();
+              if (files) {
+                const keys = Object.keys(files);
+                for (let key in keys) {
+                  formData.append("files", files[key]);
+                }
+              }
               formData.append("title", title);
               formData.append("description", description);
               formData.append("price", price);
-              const keys = Object.keys(files);
-              for (let key in keys) {
-                formData.append("files", files[key]);
-              }
               try {
                 console.log("submit");
                 const response = await axios.post(
@@ -93,7 +95,7 @@ function Publish({ user }) {
             className="publish-select-file"
             type="file"
             onChange={event => {
-              setFiles(Array.from(event.target.files));
+              setFiles(event.target.files);
             }}
           />
           <button type="submit">Valider</button>

@@ -20,10 +20,8 @@ function Product({ offer }) {
             {offer.pictures ? (
               // si mon objet contient plusieurs images
               <div className="offer-picture">
-                {offer.pictures.map(picture => {
-                  return (
-                    <img src={picture} alt={offer.title} key={offer._id} />
-                  );
+                {offer.pictures.map((picture, index) => {
+                  return <img src={picture} alt={offer.title} key={index} />;
                 })}
               </div>
             ) : (
