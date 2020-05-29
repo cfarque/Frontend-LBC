@@ -1,6 +1,6 @@
 import React from "react";
 import "./Header.css";
-import Logo from "../assets/logo.png";
+import Logo from "../assets/logo.jpg";
 import { useHistory } from "react-router-dom";
 import Cookies from "js-cookie";
 function Header({ user, setUser }) {
